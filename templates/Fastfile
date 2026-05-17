@@ -1,0 +1,21 @@
+default_platform(:ios)
+
+platform :ios do
+  # Lane: test
+  # What does this lane do? Run the app's tests so you can confirm a build
+  # is healthy before shipping it.
+  desc "Run tests"
+  lane :test do
+  end
+
+  # Lane: beta
+  # What does this lane do? Build a signed release of the app and upload it
+  # to TestFlight so internal testers can install it.
+  #
+  # Hints:
+  #   - build the app (which scheme?)
+  #   - upload the resulting build to TestFlight
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+  end
+end

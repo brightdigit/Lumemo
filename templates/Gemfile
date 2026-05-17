@@ -1,0 +1,5 @@
+source "https://rubygems.org"
+
+# What Ruby gems does this project depend on?
+# At minimum, you need the automation toolchain we'll use to ship the app
+# in this phase — pin it to a known-good major version.

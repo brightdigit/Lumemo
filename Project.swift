@@ -2,6 +2,10 @@ import ProjectDescription
 
 let project = Project(
   name: "Lumemo",
+  packages: [
+    .local(path: "./Packages/LumemoKit"),
+    .local(path: "./Packages/LumemoApp")
+  ],
   targets: [
     .target(
       name: "Lumemo",
@@ -14,7 +18,11 @@ let project = Project(
         "CFBundleVersion": "1",
         "UILaunchScreen": .dictionary([:]),
       ]),
-      sources: ["Sources/**"]
+      sources: ["Sources/**"],
+      dependencies: [
+        .package(product: "LumemoKit", type: .runtime),
+        .package(product: "LumemoApp", type: .runtime)
+      ]
     )
   ]
 )

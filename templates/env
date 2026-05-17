@@ -1,0 +1,19 @@
+# From part-3-fastlane.md §3–4 — local-only secrets and personal overrides.
+#
+# NOTE: this file would normally be named `.env` (and be gitignored). It is
+# named `env` here (no leading dot) so attendees can see it in the workshop
+# repo. When copying into your own project, rename to `.env` AND add `.env`
+# to your `.gitignore` — these values must never be committed.
+#
+# `.env` is auto-loaded by fastlane on every invocation, just like
+# `.env.default`. Values here override anything set in `.env.default`.
+
+# match encryption passphrase (from §4 — picked when creating the certs repo)
+MATCH_PASSWORD=
+
+# App Store Connect API key (from §3 — generated in ASC → Users and Access → Integrations)
+APP_STORE_CONNECT_API_KEY_KEY_ID=
+APP_STORE_CONNECT_API_KEY_ISSUER_ID=
+# Base64-encoded contents of the .p8 file. Generate with:
+#   base64 -i AuthKey_XXXXX.p8 | pbcopy
+APP_STORE_CONNECT_API_KEY_KEY=
