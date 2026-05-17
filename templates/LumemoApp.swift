@@ -1,9 +1,10 @@
 import SwiftUI
 
-// Declare the app entry point.
+// Update the app entry point so it imports the new packages and hosts
+// the real UI introduced in this phase.
 //
-// What it needs:
-//   - the @main attribute on the struct so it's the program's start point
-//   - conformance to the App protocol
-//   - a body returning a Scene — a single WindowGroup is enough for now,
-//     containing the root view of the app
+// What changes from Phase 2:
+//   - import the two new modules (LumemoKit and LumemoApp)
+//   - hold an AppModel instance with @State so it lives for the app's lifetime
+//   - replace ContentView with the package's NoteListView, supplying the
+//     model through .environment so child views can read it

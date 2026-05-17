@@ -1,17 +1,10 @@
 import ProjectDescription
 
-// Declare the project here using `let project = Project(...)`.
+// Extend the existing Project so the Lumemo app target depends on the
+// two local Swift Packages introduced in this phase.
 //
-// What it needs:
-//   - a name for the project
-//   - a list of targets — for this phase, one target representing the app
-//
-// What each target needs:
-//   - a name
-//   - destinations (which Apple platforms / device families it builds for)
-//   - a product type (app, framework, etc.)
-//   - a bundle identifier
-//   - deployment targets (minimum OS versions)
-//   - an Info.plist — start from the default and extend it with version,
-//     build number, and a launch screen entry
-//   - the source paths it compiles
+// What changes from Phase 2:
+//   - add a `packages:` array on the Project listing each local package
+//     (LumemoKit, LumemoApp) by path
+//   - on the existing app target, add a `dependencies:` array pulling in
+//     the two package products as runtime dependencies
