@@ -1,0 +1,23 @@
+# From part-4-github-ci.md §"CI for Other OSes" — WASM (manual).
+# Pre-swift-build form: runs on macOS (Swift.org toolchain install only works
+# there reliably for Wasm at time of writing). Coverage is NOT supported on Wasm.
+jobs:
+  test-wasm:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Swift.org Toolchain for Wasm
+        run: |
+          # Download a Swift.org DEVELOPMENT-SNAPSHOT toolchain that ships Wasm SDK support.
+          # Set TOOLCHAINS env so subsequent swift invocations pick it up.
+
+      - name: Install Wasm SDK
+        run: swift sdk install <wasi-sdk-url>
+
+      - uses: actions/cache@v5
+        with:
+          path: .build
+          key: spm-wasm-${{ hashFiles('Package.resolved') }}
+
+      - run: swift test --triple wasm32-unknown-wasi

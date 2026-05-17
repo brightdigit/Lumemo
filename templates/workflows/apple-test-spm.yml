@@ -1,0 +1,8 @@
+# From part-4-github-ci.md §"CI for Apple Platforms" — simplest possible Apple test job.
+# One runner, one command, no matrix. Baseline before introducing Xcode-specific destinations.
+jobs:
+  test-apple:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v6
+      - run: swift test

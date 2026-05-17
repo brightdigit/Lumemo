@@ -1,0 +1,16 @@
+# From part-4-github-ci.md §"CI for Linux/Ubuntu" — Linux matrix.
+# Same job as linux-test-simple, expanded with a matrix over Swift versions
+# and Ubuntu image variants. Same matrix mechanics as the Apple matrix —
+# different axes.
+jobs:
+  test-linux:
+    runs-on: ubuntu-latest
+    container: swift:${{ matrix.swift }}-${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        swift: ['6.2', '6.3']
+        os: [noble, jammy]
+    steps:
+      - uses: actions/checkout@v6
+      - run: swift test

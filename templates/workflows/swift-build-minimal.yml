@@ -1,0 +1,11 @@
+# From part-4-github-ci.md §"swift-build" — basic configuration.
+# Single job, default platform, the minimum-viable usage block. Contrast
+# against the per-OS manual snippets — every one of those collapses into
+# the same 3-step shape.
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container: swift:6.2-noble
+    steps:
+      - uses: actions/checkout@v6
+      - uses: brightdigit/swift-build@v1

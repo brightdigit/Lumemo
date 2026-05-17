@@ -1,9 +1,0 @@
-# Identify the app and the Apple ID this project ships under.
-#
-# What it needs:
-#   - app_identifier — the bundle ID matching Project.swift
-#   - apple_id — the Apple ID used to sign in to App Store Connect
-#
-# Optional but useful when you have access to multiple teams:
-#   - team_id (Apple Developer Program team)
-#   - itc_team_id (App Store Connect team — discoverable during `fastlane init`)

@@ -1,0 +1,14 @@
+# From part-4-github-ci.md §"CI for Apple Platforms" — single iOS Simulator job.
+# `swift test` covers host macOS, but iOS / tvOS / watchOS / visionOS need
+# `xcodebuild` with a simulator destination. One such job, still no matrix.
+jobs:
+  test-ios:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v6
+      - name: Test on iOS Simulator
+        run: |
+          xcodebuild test \
+            -scheme MyAppKit-Package \
+            -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2' \
+            -enableCodeCoverage YES
